@@ -72,7 +72,7 @@ const Question = (props) => {
         return correctAnswer === event.target.value;
     }
 
-    // sets initial value for questions
+
     useEffect(() => { setAnswers(() => questions[count] && answersHandler(questions[count])) }, [])
 
 
