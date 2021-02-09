@@ -60,7 +60,7 @@ button {
     left: 19px;
     right: 20px; }
   .trivia-time__answer {
-    width: 500px; }
+    width: 100%; }
     @media (max-width: 375px) {
       .trivia-time__answer {
         width: 310px; } }
@@ -135,6 +135,9 @@ button {
 
 .l-80 {
   left: 80%; }
+
+.p-15 {
+  padding: 0 15px; }
 
 .trivia-time__circle {
   position: relative;

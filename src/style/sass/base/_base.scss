@@ -85,7 +85,7 @@ button{
   }
 
   &__answer {
-    width: 500px;
+    width: 100%;
       @include breakpoint(mobileonly){
         width: 310px;
     }
