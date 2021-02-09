@@ -14,7 +14,7 @@ const Result = (props) => {
         let timer = setTimeout(() => {
             setResult(!props.answer)
         }, 1000);
-        { console.log(props.winner) }
+
         return () => clearTimeout(timer);
 
     }, [])
@@ -25,7 +25,6 @@ const Result = (props) => {
 
             {props.answer ?
                 <>
-                    {console.log("Correct box answer: " + props.answer + " score: " + props.score)}
                     <div className={props.answer ? "trivia-time__circle m-auto" : "d-none"} atr="correct">
                         {!props.winner && <img src={correctAnswerImg} alt="correct" />}
                         {props.winner && props.score}
@@ -46,7 +45,6 @@ const Result = (props) => {
 
                 </> :
                 <>
-                    {console.log("Incorrect box answer: " + props.answer + " score: " + props.score)}
                     <div className={!props.answer ? "trivia-time__circle m-auto" : "d-none"} atr="incorrect">
                         {!result ? <img src={inCorrectAnswerImg} alt="incorrect" /> : props.score}
                     </div>

@@ -16,15 +16,12 @@ const Question = (props) => {
     let [showQuestion, setShowQuestion] = useState(false);
     let [winner, setWinner] = useState(false);
 
-    console.log(props.location.state.questions)
     // shows next question
     const nextQuestionHandler = () => {
         if (count !== questions.length) {
             setQuestions(questions);
             setAnswers(() => answersHandler(questions[count]));
             setIsAnswerClicked(false);
-            console.log(count)
-            console.log(questions.length)
         } else {
             setWinner(count === questions.length);
         }
@@ -70,7 +67,6 @@ const Question = (props) => {
 
         setCount(correctAnswer === event.target.value && count <= questions.length ? count + 1 : count)
         setScore(correctAnswer === event.target.value ? score + 1 : score);
-        console.log("Correct answer --question component-- " + correctAnswer + " " + " clicked answer " + event.target.value);
         setIsCorrect(correctAnswer === event.target.value);
         setIsAnswerClicked(true);
         setShowQuestion("");
@@ -85,9 +81,6 @@ const Question = (props) => {
 
         <div className="trivia-time__container">
             {<div className={isAnswerClicked ? "d-none" : "trivia-time__question"}>
-                {console.log("answer clicked " + isAnswerClicked)}
-                {console.log("this!!!")}
-                {console.log(answers)}
                 {answers &&
                     <>
                         <div className="trivia-time__subtitle m-0 p-15">
