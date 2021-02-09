@@ -91,7 +91,7 @@ const Question = (props) => {
                 {answers &&
                     <>
                         <div className="trivia-time__subtitle m-0">
-                            <h2>{decode(answers.q)}</h2>
+                            {decode(answers.q)}
                         </div>
                         <div className="trivia-time__answer m-auto">
                             {answers.a

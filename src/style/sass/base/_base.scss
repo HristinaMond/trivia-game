@@ -49,7 +49,7 @@ button{
     margin: 10px 70px 10px 70px;
     font-size: 25px;
     @include breakpoint("mobileonly"){
-      font-size: 15px;
+      font-size: 2.5rem;
     }
 
   }
