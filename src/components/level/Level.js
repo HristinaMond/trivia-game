@@ -9,7 +9,7 @@ const Level = () => {
     let [difficultyLevel, setDifficultyLevel] = useState('easy');
     let [responseData, setResponseData] = useState({ results: [0] });
     let [filteredQuestions, setFilteredQuestions] = useState({ results: [{ question: "This is a question", answers: ["answe1"] }] });
-    let [selectedAnswer, setSelectedAnswer] = useState(true);
+    let [selectedAnswer, setSelectedAnswer] = useState();
 
     const difficultyLevelHandler = (event) => {
 
@@ -37,6 +37,7 @@ const Level = () => {
 
         loadData();
 
+
     }, [])
 
 
@@ -62,13 +63,14 @@ const Level = () => {
             </Button>
 
             {/* sends filterd questions by difficulty via Link state */}
-            <Link to={{
-                pathname: "/play",
-                state: { questions: filteredQuestions }
-            }}>
-                <Button class="pink" name="start" value="start" label="Play now" />
-            </Link>
-
+            <div className="trivia-time__play">
+                <Link to={{
+                    pathname: "/play",
+                    state: { questions: filteredQuestions }
+                }}>
+                    <Button class="pink" name="start" value="start" label="Play now" />
+                </Link>
+            </div>
         </div >
     )
 }

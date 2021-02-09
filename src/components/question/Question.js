@@ -13,20 +13,23 @@ const Question = (props) => {
     let [count, setCount] = useState(0);
     let [score, setScore] = useState(0);
     let [isCorrect, setIsCorrect] = useState(false);
-    let [showQuestion, setShowQuestion] = useState(false)
+    let [showQuestion, setShowQuestion] = useState(false);
     let [winner, setWinner] = useState(false);
 
     console.log(props.location.state.questions)
     // shows next question
     const nextQuestionHandler = () => {
+        if (count !== questions.length) {
+            setQuestions(questions);
+            setAnswers(() => answersHandler(questions[count]));
+            setIsAnswerClicked(false);
+            console.log(count)
+            console.log(questions.length)
+        } else {
+            setWinner(count === questions.length);
+        }
 
-        setCount(count < questions.length ? count + 1 : questions.length - 1)
-        setQuestions(questions);
-        setAnswers(() => answersHandler(questions[count]));
-        setIsAnswerClicked(false);
-        console.log(count)
-        console.log(questions.length)
-        setWinner(count === questions.length);
+
         return count === questions.length;
     }
 
@@ -62,13 +65,15 @@ const Question = (props) => {
 
     }
 
+
     const correctAnswerHandler = (event) => {
 
-        setIsAnswerClicked(true);
-        correctAnswer === event.target.value ? setScore(() => score + 1) : setScore(() => score);
+        setCount(correctAnswer === event.target.value && count <= questions.length ? count + 1 : count)
+        setScore(correctAnswer === event.target.value ? score + 1 : score);
         console.log("Correct answer --question component-- " + correctAnswer + " " + " clicked answer " + event.target.value);
         setIsCorrect(correctAnswer === event.target.value);
-
+        setIsAnswerClicked(true);
+        setShowQuestion("");
         return correctAnswer === event.target.value;
     }
 

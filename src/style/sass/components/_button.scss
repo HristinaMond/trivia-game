@@ -13,15 +13,19 @@
     border-radius: 200px;
     overflow: hidden;
     padding: 0 20px;
-    @include breakpoint(mobileonly){
-      width: 310px;
-    }
+ 
+    
 
         &--purple {
         
         background: transparent;
         line-height: 80px;
-
+        @include breakpoint("desktop"){
+            width: 80%;
+        }    
+        @include breakpoint("mobileonly"){
+            width: 60%;
+        }
             &::before {
                 content: "";
                 box-shadow: 5px 10px 4px rgba(0, 0, 0, 0.25);
@@ -40,7 +44,12 @@
         &--pink {
         background: #FF87B5;
         box-shadow: 0px 10px 4px #CB5A85;
-        
+        @include breakpoint("desktop"){
+            width: 80%;
+        }    
+        @include breakpoint("mobileonly"){
+            width: 60%;
+        }
         }
 
         &--cancel {
