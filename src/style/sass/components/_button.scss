@@ -21,7 +21,7 @@
         background: transparent;
         line-height: 80px;
         @include breakpoint("desktop"){
-            width: 80%;
+            width: 100%;
         }    
         @include breakpoint("mobileonly"){
             width: 60%;

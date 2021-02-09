@@ -3,7 +3,7 @@
 Trivia Game is a quiz game where the user selects level difficulty and accordingly one question is listed. If he clicks the correct answer he will be able to answer another question and if he clicks wrong answer it is instant game over.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), uses free api https://opentdb.com/api_config.php and selects 10 questions.
-It is available live on: https://trivia-game-662ba.web.app/
+It is available live on: https://trivia-time-3e668.web.app/
 
 ## Available Scripts
 

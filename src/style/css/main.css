@@ -176,7 +176,7 @@ button {
     line-height: 80px; }
     @media (min-width: 376px) {
       .trivia-time__btn--purple {
-        width: 80%; } }
+        width: 100%; } }
     @media (max-width: 375px) {
       .trivia-time__btn--purple {
         width: 60%; } }
