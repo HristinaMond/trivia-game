@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Trivia Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Trivia Game is a quiz game where the user selects level difficulty and accordingly one question is listed. If he clicks the correct answer he will be able to answer another question and if he clicks wrong answer it is instant game over.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), uses free api https://opentdb.com/api_config.php and selects 10 questions.
+It is available live on: https://trivia-game-662ba.web.app/
 
 ## Available Scripts
 
@@ -39,6 +42,10 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## npm run compile:sass
+
+Watch and output css file by using folder paths as your input and output
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
@@ -63,7 +70,27 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Deployed od firebase and accessed by link: https://trivia-game-662ba.web.app/
+
+To deploy to firebase take the following steps:
+
+1. If you don't have a firebase account:
+
+-> create firebase account
+-> create firebase project inside firebase account
+-> npm instal firebase-tools
+-> open cmd navigate to project folder and write command 'firebase login'
+-> npm run build in same cmd
+-> firebase init
+-> choose hosting from firebase feature list
+-> set public directory to build
+-> don't override html file
+-> firebase use project id (check firebase account)
+-> firebasedeploy
+
+2. If you have a firebase account
+
+-> firebase deploy
 
 ### `npm run build` fails to minify
 
