@@ -27,13 +27,16 @@ const Result = (props) => {
                 <>
                     {console.log("Correct box answer: " + props.answer + " score: " + props.score)}
                     <div className={props.answer ? "trivia-time__circle m-auto" : "d-none"} atr="correct">
-                        {!result && <img src={correctAnswerImg} alt="correct" />}
+                        {!props.winner && <img src={correctAnswerImg} alt="correct" />}
+                        {props.winner && props.score}
                     </div>
                     {
 
                         props.winner ?
                             <Route render={({ history }) => (
-                                <Button class="pink" label="Again" click={() => { history.push('/') }} />
+                                <Button class="pink" label="Again" click={() => { history.push('/') }}>
+                                    <img src={arrowAgain} className="trivia-time__image d-block p-absolute l-80" alt="arrow-again" />
+                                </Button>
                             )} /> :
                             <Button class="pink" label="Next" click={props.nextclickQuestion}>
                                 <img src={arrowNext} className="trivia-time__image d-block p-absolute l-80" alt="arrow-next" />

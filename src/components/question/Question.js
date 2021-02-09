@@ -26,7 +26,7 @@ const Question = (props) => {
         setIsAnswerClicked(false);
         console.log(count)
         console.log(questions.length)
-        count === questions.length ? setWinner(true) : setWinner(false);
+        setWinner(count === questions.length);
         return count === questions.length;
     }
 
@@ -111,7 +111,7 @@ const Question = (props) => {
                 }
 
             </div>}
-            {isAnswerClicked ? <Result answer={isCorrect} score={score} nextclickQuestion={nextQuestionHandler} winner={winner} /> : null}
+            {isAnswerClicked || winner ? <Result answer={isCorrect} score={score} nextclickQuestion={nextQuestionHandler} winner={winner} /> : null}
         </div >
     );
 }

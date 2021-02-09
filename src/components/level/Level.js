@@ -21,7 +21,7 @@ const Level = () => {
         // returns new filtered list by the selected difficulty
         let filter = responseData !== 0 && responseData.results.filter(question => question.difficulty === difficultyLevel);
         setFilteredQuestions(filter);
-
+        console.log(filter)
     }
 
     useEffect(() => {
